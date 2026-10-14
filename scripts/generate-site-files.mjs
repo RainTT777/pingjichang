@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const siteUrl = 'https://raintt777.github.io/pingjichang';
+const siteUrl = 'https://pingjichang.com';
 const lastmod = '2026-10-14';
 
 function collectHtml(dir, prefix = '') {
