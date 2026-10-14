@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { airports } from '../../data/airports';
+---
+<Base title="机场推荐榜单" description="机场服务目录、线路信息与公开推荐入口。">
+  <div class="container airport-directory">
+    <Breadcrumbs items={[{ label: '机场推荐榜单' }]} />
+    <div class="directory-heading"><div><span class="eyebrow">AIRPORT DIRECTORY</span><h1>机场推荐榜单</h1><p class="muted">以下入口由用户提供，页面仅整理公开信息，不代表对服务稳定性、价格或安全性的绝对承诺。请在注册前自行核验套餐、退款和隐私政策。</p></div><span class="directory-count">{airports.length} 个机场</span></div>
+    <div class="airport-grid">{airports.map((airport, index) => <article class="airport-card"><div class="airport-card-top"><span class="airport-index">{String(index + 1).padStart(2, '0')}</span><span class="airport-category">{airport.category}</span></div><h2>{airport.name}</h2><p>{airport.note}</p><div class="airport-meta"><span>公开推荐入口</span><span>需自行测试</span></div><a class="button" href={airport.url} target="_blank" rel="nofollow sponsored noopener">访问官网 →</a></article>)}</div>
+  </div>
+</Base>

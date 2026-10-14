@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raintt777.github.io/pingjichang/sitemap.xml

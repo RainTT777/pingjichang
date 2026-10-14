@@ -1,0 +1,4 @@
+---
+const {tags=['机场评测','稳定机场','性价比','Clash','节点测速']}=Astro.props;
+---
+<div class="tag-filter" aria-label="标签筛选">{tags.map((tag:string)=><a class="badge" href={`/search/?tag=${encodeURIComponent(tag)}`}>{tag}</a>)}</div>

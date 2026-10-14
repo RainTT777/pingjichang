@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import AirportTable from '../../components/AirportTable.astro';
+const titles={stable:'稳定机场',value:'高性价比机场',clash:'Clash 机场'};
+export function getStaticPaths(){return Object.entries(titles).map(([type,title])=>({params:{type},props:{title}}))}
+const {title}=Astro.props;
+const airports=[
+  {name:'EdgeNova 边缘节点',slug:'sample-a',score:92,risk:'低',price:'以官网为准',tested:'持续观察'},
+  {name:'光年梯',slug:'sample-b',score:88,risk:'低',price:'以官网为准',tested:'持续观察'},
+  {name:'极连云',slug:'sample-c',score:86,risk:'低',price:'以官网为准',tested:'持续观察'},
+  {name:'速界',slug:'sample-d',score:83,risk:'中',price:'以官网为准',tested:'待补充'},
+  {name:'快狸',slug:'sample-e',score:80,risk:'中',price:'以官网为准',tested:'待补充'},
+];
+---
+<Base title={title}><div class="container"><h1>{title}</h1><p class="muted">排名基于公开资料与测试记录，实际体验可能随地区和时段变化。</p><AirportTable airports={airports}/></div></Base>

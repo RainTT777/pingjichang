@@ -1,0 +1,4 @@
+---
+const {level}=Astro.props; const cls=level==='高'?'risk-high':level==='中'?'risk-mid':'';
+---
+<span class={`badge ${cls}`}>风险：{level}</span>

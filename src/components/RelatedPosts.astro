@@ -1,0 +1,4 @@
+---
+const {posts=[]}=Astro.props;
+---
+<section class="section"><h2>相关文章</h2><div class="grid">{posts.map((p:any)=><article class="card"><h3><a href={p.href}>{p.title}</a></h3><p class="muted">{p.description}</p></article>)}</div></section>

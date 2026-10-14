@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/BaseLayout.astro'; const posts=[['clash','Clash 配置与订阅导入'],['shadowrocket','Shadowrocket 机场订阅导入'],['stash','Stash 规则与节点管理'],['subscription','订阅链接导入排错'],['speedtest','节点测速与晚高峰记录']];
+---
+<Base title="Clash 与 Shadowrocket 教程"><div class="container"><h1>教程</h1><div class="grid">{posts.map(([slug,title])=><article class="card"><h3><a href={`/tutorials/${slug}/`}>{title}</a></h3><p class="muted">步骤说明与演示截图位预留。</p></article>)}</div></div></Base>

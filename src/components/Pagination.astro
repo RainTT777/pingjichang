@@ -1,0 +1,4 @@
+---
+const {current=1,total=1}=Astro.props;
+---
+<nav class="pagination" aria-label="分页"><span class="muted">第 {current} / {total} 页</span><a class="button" href="#top">上一页</a><a class="button" href="#top">下一页</a></nav>

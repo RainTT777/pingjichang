@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/BaseLayout.astro'; export function getStaticPaths(){return ['clash','shadowrocket','stash','subscription','speedtest'].map(slug=>({params:{slug},props:{title:{clash:'Clash 配置与订阅导入',shadowrocket:'Shadowrocket 机场订阅导入',stash:'Stash 规则与节点管理',subscription:'订阅链接导入排错',speedtest:'节点测速与晚高峰记录'}[slug]}}))}; const {title}=Astro.props;
+---
+<Base title={title}><div class="container"><h1>{title}</h1><p>本文为演示教程，示例链接和数据均不可用于真实服务。请先确认服务条款和隐私风险。</p><h2>操作步骤</h2><ol><li>获取合法的订阅链接并检查来源。</li><li>在客户端中添加订阅并更新配置。</li><li>记录节点延迟、速度和晚高峰表现。</li></ol></div></Base>

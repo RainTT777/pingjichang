@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+const airportItems = [
+  {slug:'sample-a',name:'EdgeNova 边缘节点',score:92,risk:'低'},
+  {slug:'sample-b',name:'光年梯',score:88,risk:'低'},
+  {slug:'sample-c',name:'极连云',score:86,risk:'低'},
+  {slug:'sample-d',name:'速界',score:83,risk:'中'},
+  {slug:'sample-e',name:'快狸',score:80,risk:'中'},
+];
+export function getStaticPaths(){return airportItems.map(item=>({params:{slug:item.slug},props:item}))}
+const {name,score,risk}=Astro.props;
+---
+<Base title={`${name} 评测`} description={`${name} 的线路、稳定性与使用体验整理。`}><div class="container"><p class="category">机场评测</p><h1>{name}</h1><p class="muted">本文根据公开资料和测试记录整理，服务表现可能随时间、地区和运营商变化。</p><p>综合评分：<strong class="score">{score}</strong></p><p>风险等级：{risk}</p><h2>评测摘要</h2><p>关注线路稳定性、晚高峰表现、节点覆盖、客户端兼容性和套餐规则。注册前请阅读官网最新公告、退款政策和隐私说明。</p></div></Base>

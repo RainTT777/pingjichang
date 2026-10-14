@@ -1,0 +1,4 @@
+---
+const {scores}=Astro.props; const labels={stability:'稳定性（25）',peakHours:'晚高峰表现（20）',speed:'速度（15）',nodeQuality:'节点质量（10）',streaming:'流媒体兼容性（10）',value:'价格性价比（10）',support:'客服退款（5）',transparency:'信息透明度（5）'};
+---
+<div class="table-wrap"><table class="data-table"><tbody>{Object.entries(scores||{}).map(([k,v])=><tr><th>{labels[k as keyof typeof labels]||k}</th><td>{v as number}</td></tr>)}</tbody></table></div>

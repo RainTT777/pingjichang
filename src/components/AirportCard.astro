@@ -1,0 +1,5 @@
+---
+import RiskBadge from './RiskBadge.astro';
+const {airport}=Astro.props;
+---
+<article class="card"><h3><a href={`/reviews/${airport.slug||''}`}>{airport.name||airport.airportName}</a></h3><p>{airport.description||airport.category}</p><p><strong class="score">{airport.totalScore||airport.score}</strong> / 100　<RiskBadge level={airport.riskLevel||airport.risk}/></p><a href={`/reviews/${airport.slug||''}`}>查看评测 →</a></article>

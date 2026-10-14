@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+const items = [
+  { name:'EdgeNova 边缘节点', slug:'sample-a', score:92, category:'边缘节点 · 机场评测', risk:'低' },
+  { name:'光年梯', slug:'sample-b', score:88, category:'机场评测 · 线路服务', risk:'低' },
+  { name:'极连云', slug:'sample-c', score:86, category:'机场评测 · 综合机场', risk:'低' },
+  { name:'速界', slug:'sample-d', score:83, category:'机场评测 · 高速线路', risk:'中' },
+  { name:'快狸', slug:'sample-e', score:80, category:'机场评测 · 综合机场', risk:'中' },
+];
+---
+<Base title="机场评测"><div class="container"><Breadcrumbs items={[{label:'机场评测'}]}/><h1>机场评测</h1><p class="muted">基于公开信息与测试记录整理，实际表现可能因地区、运营商和时段而不同。</p><div class="grid">{items.map(item => <article class="card"><span class="category">{item.category}</span><h2><a href={`/reviews/${item.slug}/`}>{item.name}</a></h2><p>综合评分 <strong class="score">{item.score}</strong></p><p class="muted">风险等级：{item.risk}</p><a class="button" href={`/reviews/${item.slug}/`}>查看测评</a></article>)}</div></div></Base>

@@ -1,0 +1,4 @@
+---
+const {airports=[]}=Astro.props;
+---
+<div class="table-wrap"><table class="data-table"><thead><tr><th>机场</th><th>综合评分</th><th>稳定性</th><th>价格</th><th>风险</th><th>最近测试</th></tr></thead><tbody>{airports.map((a:any)=><tr><td><a href={`/reviews/${a.slug}`}>{a.airportName||a.name}</a></td><td>{a.totalScore||a.score}</td><td>{a.scores?.stability||'演示'}</td><td>{a.price}</td><td><RiskBadge level={a.riskLevel||a.risk}/></td><td>{a.lastTestedAt||a.tested}</td></tr>)}</tbody></table></div>
