@@ -21,7 +21,7 @@ const rootFiles = [
   'sitemap.xml',
 ];
 
-const directories = ['assets', 'articles'];
+const directories = ['assets', 'articles', 'src/styles'];
 
 function copyFile(relativeSource, relativeTarget = relativeSource) {
   const source = path.join(root, relativeSource);
